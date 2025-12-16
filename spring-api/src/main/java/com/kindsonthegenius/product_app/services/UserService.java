@@ -45,15 +45,15 @@ public class UserService {
     public boolean authenticate(String username, String password) {
         User user = userRepository.findByUsername(username);
 
-        if(!user.getUsername().equals(username)){
+        if (user == null) {
             throw new UsernameNotFoundException("User does not exist in the database");
         }
 
-        if (!bCryptPasswordEncoder.matches(password, user.getPasswordHash())) {
-            throw  new BadCredentialsException("The password is incorrect");
+        if (!bCryptPasswordEncoder.matches(password, user.getPassword())) {
+            throw new BadCredentialsException("The password is incorrect");
         }
 
-        return  true;
+        return true;
     }
 
 }

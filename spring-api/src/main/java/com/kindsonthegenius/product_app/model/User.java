@@ -15,6 +15,4 @@ public class User {
     private String lastname;
     private String username;
     private String password;
-    @Column(name = "password_hash")
-    private String passwordHash;
 }

@@ -115,3 +115,6 @@ INSERT INTO product (id, title, summary, created_at, updated_at, content, catego
  'Automatic coffee maker with programmable settings, allowing you to schedule your brew and adjust strength and size.',
  3,
  10);
+
+-- Ensure auto-increment for product.id continues after initial data
+ALTER TABLE product ALTER COLUMN id RESTART WITH 11;

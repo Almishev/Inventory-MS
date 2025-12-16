@@ -18,7 +18,7 @@ public class DataInitializer {
                 admin.setFirstname("Admin");
                 admin.setLastname("User");
                 admin.setUsername("admin");
-                admin.setPasswordHash(passwordEncoder.encode("admin123"));
+                admin.setPassword(passwordEncoder.encode("admin123"));
                 userRepository.save(admin);
             }
 
@@ -27,7 +27,7 @@ public class DataInitializer {
                 user.setFirstname("Standard");
                 user.setLastname("User");
                 user.setUsername("user");
-                user.setPasswordHash(passwordEncoder.encode("user123"));
+                user.setPassword(passwordEncoder.encode("user123"));
                 userRepository.save(user);
             }
         };
